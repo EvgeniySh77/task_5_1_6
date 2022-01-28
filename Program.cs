@@ -4,9 +4,9 @@ namespace task_5_1_6
 {
     class Program
     {
-        static int[] GetArrayFromConsole()
+        static int[] GetArrayFromConsole(int num = 5)
         {
-            var result = new int[5];
+            var result = new int[num];
 
             for (int i = 0; i < result.Length; i++)
             {
@@ -37,9 +37,11 @@ namespace task_5_1_6
 
         static void Main()
         {
+            var array = GetArrayFromConsole();
+            var sortedArray = SortArray(array);
             
 
-            foreach (var item in SortArray(GetArrayFromConsole()))
+            foreach (var item in sortedArray)
             {
                 Console.Write($"{item} ");
             }
