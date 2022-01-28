@@ -16,22 +16,30 @@ namespace task_5_1_6
 
             return result;
         }
-        static void Main()
+
+        static int[] SortArray(int[] getArrayFromConsole)
         {
-            var arr = GetArrayFromConsole();
-            for (int i = 0; i < arr.Length; i++)
+            var sortArr = getArrayFromConsole;
+            for (int i = 0; i < sortArr.Length; i++)
             {
-                for (int j = i + 1; j < arr.Length; j++)
+                for (int j = i + 1; j < sortArr.Length; j++)
                 {
-                    if (arr[i] > arr[j])
+                    if (sortArr[i] > sortArr[j])
                     {
-                        (arr[i], arr[j]) = (arr[j], arr[i]);
+                        (sortArr[i], sortArr[j]) = (sortArr[j], sortArr[i]);
                     }
                 }
                 
             }
 
-            foreach (var item in arr)
+            return sortArr;
+        }
+
+        static void Main()
+        {
+            
+
+            foreach (var item in SortArray(GetArrayFromConsole()))
             {
                 Console.Write($"{item} ");
             }
