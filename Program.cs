@@ -35,18 +35,26 @@ namespace task_5_1_6
             return sortArr;
         }
 
-        static void Main()
+        static void ShowArray(int[] array, bool isSort = false )
         {
-            var array = GetArrayFromConsole();
-            var sortedArray = SortArray(array);
-            
+            if (isSort == true)
+            {
+                var sortedArray = SortArray(array);
 
-            foreach (var item in sortedArray)
+                array = sortedArray;
+            }            
+            
+            foreach (var item in array)
             {
                 Console.Write($"{item} ");
             }
 
             Console.ReadKey();
+        }
+
+        static void Main()
+        {
+            ShowArray(GetArrayFromConsole(), false);            
         }
     }
 }
