@@ -37,11 +37,9 @@ namespace task_5_1_6
 
         static void ShowArray(int[] array, bool isSort = false )
         {
-            if (isSort == true)
+            if (isSort)
             {
-                var sortedArray = SortArray(array);
-
-                array = sortedArray;
+                array = SortArray(array);
             }            
             
             foreach (var item in array)
@@ -53,8 +51,8 @@ namespace task_5_1_6
         }
 
         static void Main()
-        {
-            ShowArray(GetArrayFromConsole(), false);            
+        {            
+            ShowArray(GetArrayFromConsole(10), true);            
         }
     }
 }
