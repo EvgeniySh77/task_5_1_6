@@ -17,7 +17,7 @@ namespace task_5_1_6
             return result;
         }
 
-        static int[] SortArray(int[] getArrayFromConsole)
+        static int[] SortArray(params int[] getArrayFromConsole)
         {
             var sortArr = getArrayFromConsole;
             for (int i = 0; i < sortArr.Length; i++)
